@@ -1,0 +1,43 @@
+{
+  "name": "ultimate-executive",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Self-hosted Discord community bot. Developed by Casi.",
+  "author": "Casi",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.22.0 <25"
+  },
+  "packageManager": "pnpm@10.10.0",
+  "scripts": {
+    "dev": "tsx --env-file=.env src/index.ts",
+    "start": "node --env-file=.env dist/src/index.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src tests scripts eslint.config.js --max-warnings=0",
+    "test": "vitest run --dir tests",
+    "build": "tsc -p tsconfig.build.json",
+    "commands": "tsx scripts/commands.ts",
+    "preview:rank": "tsx scripts/preview-rank.ts",
+    "benchmark": "tsx scripts/benchmark.ts",
+    "register": "tsx --env-file=.env scripts/register.ts"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "1.1.0",
+    "better-sqlite3": "12.11.1",
+    "discord.js": "14.28.0",
+    "drizzle-orm": "0.45.4",
+    "pino": "10.4.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.10.0",
+    "eslint": "^9.39.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.0",
+    "vitest": "5.0.5"
+  }
+}

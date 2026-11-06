@@ -1,0 +1,12 @@
+services:
+  executive:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_PATH: /app/data/executive.sqlite
+    volumes:
+      - executive-data:/app/data
+    init: true
+volumes:
+  executive-data:
